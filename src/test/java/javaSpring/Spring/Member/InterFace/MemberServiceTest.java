@@ -3,14 +3,24 @@ package javaSpring.Spring.Member.InterFace;
 import javaSpring.Spring.Member.Grade;
 import javaSpring.Spring.Member.Member;
 import javaSpring.Spring.Member.MemberServiceImpl;
+import javaSpring.Spring.Order.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach(){
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+
+    }
 
     @Test
     void join(){
