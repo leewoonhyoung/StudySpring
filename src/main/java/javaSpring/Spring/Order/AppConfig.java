@@ -6,7 +6,10 @@ import javaSpring.Spring.Member.InterFace.MemberRepository;
 import javaSpring.Spring.Member.InterFace.MemberService;
 import javaSpring.Spring.Member.MemberServiceImpl;
 import javaSpring.Spring.Member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
 
 
@@ -14,22 +17,22 @@ public class AppConfig {
 //    public MemberService memberService(){
 //        return new MemberServiceImpl(new MemoryMemberRepository());
 //    }
-
+    @Bean
     public MemberService memberService(){
         return new MemberServiceImpl(memberRepository());
     }
-
-    private MemberRepository memberRepository() {
+    @Bean
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
 
-
+    @Bean
     public OrderService orderService(){
         return new OrderServiceImpl(
                 memberRepository(), discountPolicy());
     }
-
+    @Bean
     public DiscountPolicy discountPolicy(){
         return new FixDiscountPolicy();
     }
