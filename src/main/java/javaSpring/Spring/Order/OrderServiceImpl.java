@@ -4,9 +4,11 @@ import javaSpring.Spring.Discount.DiscountPolicy;
 import javaSpring.Spring.Member.InterFace.MemberRepository;
 import javaSpring.Spring.Member.Member;
 import javaSpring.Spring.Member.MemoryMemberRepository;
+import javaSpring.Spring.annotation.MainDiscountPolicy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +20,8 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired//ac.getBean(DiscountPolicy.class 와 유사한 기능)
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    @Autowired //ac.getBean(DiscountPolicy.class 와 유사한 기능)
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
@@ -38,6 +40,7 @@ public class OrderServiceImpl implements OrderService{
     public MemberRepository getMemberRepository() {
         return memberRepository;
     }
+
 
     //    //Test setter @Autowired 주입
 //    private MemberRepository memberRepository;

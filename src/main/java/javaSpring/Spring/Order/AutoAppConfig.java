@@ -13,26 +13,16 @@ import org.springframework.context.annotation.FilterType;
 
 @Configuration
 @ComponentScan(
-        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
+      excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 )
-
 public class AutoAppConfig {
 
 //    @Autowired
 //    MemberRepository memberRepository;
 //    @Autowired
 //    DiscountPolicy discountPolicy;
-//
-//
 
-    @Bean
-    OrderService orderService(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy){
-        return new OrderServiceImpl(memberRepository, rateDiscountPolicy);
-    }
-    @Bean
-    public DiscountPolicy discountPolicy(){
-        return new RateDiscountPolicy();
-    }
+
 
 
 // ComponentScan 충돌 TEst

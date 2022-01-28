@@ -36,6 +36,7 @@ public class AppConfig {
         return new OrderServiceImpl(
                 memberRepository(), discountPolicy());
     }
+
     @Bean
     public DiscountPolicy discountPolicy(){
         System.out.println("Call AppConfig.discountPolicy");
