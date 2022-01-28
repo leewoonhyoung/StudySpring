@@ -2,7 +2,10 @@ package javaSpring.Spring.Discount;
 
 import javaSpring.Spring.Member.Grade;
 import javaSpring.Spring.Member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount = 1000;

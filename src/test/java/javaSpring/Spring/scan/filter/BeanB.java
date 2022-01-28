@@ -1,5 +1,5 @@
 package javaSpring.Spring.scan.filter;
 
-@MyIExcludeComponent
+@MyExcludeComponent
 public class BeanB {
 }
