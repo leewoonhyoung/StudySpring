@@ -1,14 +1,17 @@
 package javaSpring.Spring.lifecycle;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+import org.junit.jupiter.api.Test;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class Bean_init_close_lifecycle {
 
     private String url;
 
 
-    public NetworkClient(){
+    public Bean_init_close_lifecycle(){
         System.out.println("생성자 호출, url = " + url);
         connect();
         call("초기화 연결 메세지");
@@ -26,24 +29,25 @@ public class NetworkClient implements InitializingBean, DisposableBean {
         System.out.println("call = " + url +  "message = " + message);
     }
     //서비스 종료시 호출
-    
+
     public void disconnect(){
         System.out.println("close = " + url);
-        
-        }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("NetworkClient.afterPropertiesSet");
+    }
+
+    public void init()   {
+        System.out.println("Bean_init_close_lifecycle.init");
         connect();
         call("초기화 연결 메세지");
 
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("NetworkCline.destory");
+
+    public void close()   {
+        System.out.println("Bean_init_close_lifecycle.close");
         disconnect();
 
     }
+
+
 }
