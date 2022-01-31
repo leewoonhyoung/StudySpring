@@ -43,7 +43,7 @@ public class SingletonWithPrototypeTest1 {
         assertThat(count2).isNotEqualTo(1);
 
     }
-    @Scope("singleton")
+    @Scope("singleton") // 싱글톤 내부에 프로토타입 빈이 주입되면 bean 생성시 프로토타입의 bean을 계속해서 사용하게 된다.
     static class ClientBean{
 
         private final PrototypeBean prototypeBean; // 생성시점에 주입된다.
