@@ -1,11 +1,10 @@
 package javaSpring.Spring.autowired;
 
 
+import javaSpring.Spring.AutoAppConfig;
 import javaSpring.Spring.Discount.DiscountPolicy;
 import javaSpring.Spring.Member.Grade;
 import javaSpring.Spring.Member.Member;
-import javaSpring.Spring.Order.AutoAppConfig;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class AllBeanTest {
         assertThat(discountPrice).isEqualTo(1000);
 
         int rateDiscountPrice = discountService.discount(member, 2000, "rateDiscountPolicy");
-        assertThat(rateDiscountPrice).isEqualTo(2000);
+        assertThat(rateDiscountPrice).isEqualTo(200);
 
     }
     static class DiscountService{

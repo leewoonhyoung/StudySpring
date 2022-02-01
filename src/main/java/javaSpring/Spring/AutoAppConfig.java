@@ -1,12 +1,6 @@
-package javaSpring.Spring.Order;
+package javaSpring.Spring;
 
 
-import javaSpring.Spring.Discount.DiscountPolicy;
-import javaSpring.Spring.Discount.RateDiscountPolicy;
-import javaSpring.Spring.Member.InterFace.MemberRepository;
-import javaSpring.Spring.Member.MemoryMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;

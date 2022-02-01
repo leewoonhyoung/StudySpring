@@ -1,8 +1,8 @@
 package javaSpring.Spring.scan;
 
+import javaSpring.Spring.AutoAppConfig;
 import javaSpring.Spring.Member.InterFace.MemberRepository;
 import javaSpring.Spring.Member.InterFace.MemberService;
-import javaSpring.Spring.Order.AutoAppConfig;
 import javaSpring.Spring.Order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
