@@ -42,4 +42,18 @@ public class AppConfig {
         System.out.println("Call AppConfig.discountPolicy");
         return new FixDiscountPolicy();
     }
+
+    //과거 코드
+//    public class AppConfig {
+//        public MemberService memberService() {
+//            return new MemberServiceImpl(new MemoryMemberRepository());
+//        }
+//        public OrderService orderService() {
+//            return new OrderServiceImpl(
+//                    new MemoryMemberRepository(),
+//                    new FixDiscountPolicy());
+//        }
+//    }
+
+
 }
