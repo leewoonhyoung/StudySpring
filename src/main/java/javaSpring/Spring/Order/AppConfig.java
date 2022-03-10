@@ -9,7 +9,7 @@ import javaSpring.Spring.Member.MemoryMemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@Configuration // ComponentScan시 configuration 내의 bean들도 자동으로 주입됨
 public class AppConfig {
 
 
